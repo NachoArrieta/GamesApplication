@@ -35,7 +35,7 @@ fun GameCategoryItem(
     imageUrl: String,
     title: String,
     genre: String,
-    releaseData: String,
+    releaseDate: String,
     onClick: () -> Unit
 ) {
     Surface(
@@ -91,7 +91,7 @@ fun GameCategoryItem(
                         painter = painterResource(id = R.drawable.ic_calendar),
                         contentDescription = null
                     )
-                    Text(text = releaseData)
+                    Text(text = releaseDate)
                 }
             }
         }
