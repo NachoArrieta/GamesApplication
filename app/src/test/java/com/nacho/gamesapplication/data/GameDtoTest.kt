@@ -13,13 +13,15 @@ class GameDtoTest {
 
     @Test
     fun `json serialization and deserialization should work correctly`() {
-        // Arrange
+        // Creamos una instancia de Moshi, que es una biblioteca para trabajar con JSON
         val moshi = Moshi.Builder()
-            .add(KotlinJsonAdapterFactory())
+            .add(KotlinJsonAdapterFactory())// Agregamos soporte para clases de Kotlin
             .build()
 
+        // Creamos un adaptador JSON específico para la clase GameDto
         val jsonAdapter = moshi.adapter(GameDto::class.java)
 
+        // Creamos una instancia de GameDto con datos de prueba
         val originalDto = GameDto(
             description = "Game Description",
             developer = "Developer",
@@ -44,12 +46,15 @@ class GameDtoTest {
             title = "Game Title"
         )
 
-        // Act
+        // Serializamos el objeto GameDto a un JSON
         val json = jsonAdapter.toJson(originalDto)
+        // Deserializamos el JSON de vuelta a un objeto GameDto
         val recreatedDto = jsonAdapter.fromJson(json)
 
-        // Assert
+        // Verificamos que el objeto deserializado no sea nulo
         assertNotNull(recreatedDto)
+        // Verificamos que el objeto original y el deserializado sean iguales
         assertEquals(originalDto, recreatedDto)
     }
+
 }

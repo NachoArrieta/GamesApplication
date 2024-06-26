@@ -10,15 +10,18 @@ import androidx.compose.ui.test.junit4.createAndroidComposeRule
 @RunWith(AndroidJUnit4::class)
 class MainActivityTest {
 
+    // Creamos una regla de ComposeTestRule, que permite interactuar con la UI de Compose
     @get:Rule
     val composeTestRule = createAndroidComposeRule<MainActivity>()
 
     @Test
     fun testSplashScreenDisplayedFirst() {
+        // Buscamos un nodo con el texto "Games" y verifica que está visible en la pantalla
         composeTestRule.onNodeWithText("Games").assertIsDisplayed()
+
+        // Buscamos un nodo con el texto "Application" y verifica que está visible en la pantalla
         composeTestRule.onNodeWithText("Application").assertIsDisplayed()
     }
-
     @Test
     fun testNavigationToHomeScreen() {
         // Avanza el tiempo para simular la espera de 6 segundos

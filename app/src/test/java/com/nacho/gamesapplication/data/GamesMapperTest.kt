@@ -8,7 +8,8 @@ class GamesResponseDtoTest {
 
     @Test
     fun `toGames should convert GamesResponseDto to Games`() {
-        // Arrange
+        // Given: Configuramos el entorno de la prueba inicializando los datos necesarios, asignando
+        // el valor a cada uno de los campos
         val dto = GamesResponseDto(
             developer = "Developer",
             freeToGameProfileUrl = "http://example.com",
@@ -23,10 +24,11 @@ class GamesResponseDtoTest {
             title = "Game Title"
         )
 
-        // Act
+        // When: Ejecuta la acción que se desea probar
+        // Llamamos al método toGames() del objeto dto y almacenamos el resultado en la variable result
         val result = dto.toGames()
 
-        // Assert
+        // Then: Verifica los resultados de la acción probada
         assertEquals("Developer", result.developer)
         assertEquals("http://example.com", result.freetoGameProfileUrl)
         assertEquals("http://example.com/game", result.gameUrl)
