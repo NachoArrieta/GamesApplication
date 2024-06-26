@@ -81,6 +81,11 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-runtime-compose"
     implementation "androidx.lifecycle:lifecycle-runtime-compose"
 
+    testImplementation 'org.mockito:mockito-core:3.9.0'
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.2'
+    testImplementation 'androidx.arch.core:core-testing:2.1.0'
+
+
     //Compose destinations
     implementation 'io.github.raamcosta.compose-destinations:core:1.7.41-beta'
     implementation 'io.github.raamcosta.compose-destinations:animations-core:1.7.41-beta'

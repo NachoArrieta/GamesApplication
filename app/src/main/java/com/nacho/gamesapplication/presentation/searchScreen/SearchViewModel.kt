@@ -60,7 +60,7 @@ class SearchViewModel @Inject constructor(
         }
     }
 
-    private fun getAllGames() {
+    fun getAllGames() {
         viewModelScope.launch {
             _searchScreenState.update {
                 it.copy(
